@@ -16,11 +16,6 @@ body {
     color: #ffffff;
 }
 
-.navBar img{
-    width: 15%;
-    height: 100%;
-}
-
 
 .links {
     width: 10%;
@@ -102,7 +97,7 @@ body {
     align-items: center;
     border-style: ridge;
     border-radius: 50px;
-    border-color: rgb(153, 15, 15);
+    border-color: rgb(84, 244, 255);
     background-color: black;
 }
 
@@ -111,7 +106,7 @@ body {
     height: 50%;
     border-radius: 100px;
     background-color: white;
-    border-color: rgb(15, 15, 128);
+    border-color: rgb(16, 43, 4);
 }
 
 .imagem{
