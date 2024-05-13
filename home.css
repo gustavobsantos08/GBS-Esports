@@ -85,7 +85,9 @@ body {
     justify-content: center ;
     flex-direction: row;
     align-items: center;
-    background-image: url(https://static.significados.com.br/foto/atletismo-og.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-image: url(data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBwgHBgkIBwgKCgkLDRYPDQwMDRsUFRAWIB0iIiAdHx8kKDQsJCYxJx8fLT0tMTU3Ojo6Iys/RD84QzQ5OjcBCgoKDQwNGg8PGjclHyU3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3N//AABEIAJQAzAMBIgACEQEDEQH/xAAbAAADAQEBAQEAAAAAAAAAAAAAAQIDBgUHBP/EABkQAQEBAQEBAAAAAAAAAAAAAAABEQJBMf/EABsBAAMBAQEBAQAAAAAAAAAAAAABAgMEBQYH/8QAGREBAQEBAQEAAAAAAAAAAAAAAAECERID/9oADAMBAAIRAxEAPwD4hgxeDHV4T1GBWHheR1AVYSbkEDwsTwyBguAgZEAACAAAAAAMAAAgZAAAAAAEG+DF4MepcMeowWKwYXg+owYvCxFwOs8GKwYyuFdQS7Cxncn1IMIsMgAXAQMi4AAAAACAAABAAGAAA/ZgxeDHveHN1GFi8GFcH1nYMXYTO4PqMKxeFYz1g+osJdhVjrB9Z4VWVjDWVdSSrCZ2GQASZAyKgAAgAAACMgYAAD08GLwY+o8OLrPCxphYm5HWdhY0wrGdyrrIVeJsZ3KuoTY0wrGWsH1nYlpU2ObeFyosTYupc+sqIjDKqIjBAgAkAAAAjIAAAG9rBjTCx9j4eb1nica4nEXJ9ZWFjSwrGdyuVkWLsJncq6zswq0sRWVyqVFiauxNjm3lUZ1NXU1y7y0iSVfiXPYZAyRVEBQmgAAgCMgAAAbocLGmFj7jy8nrPE2NMKxFyqVlYmxribGdipWVibGlibGNyuVniauxNjHUXKzsTY0sRjDUXKixNXYiuT6RcTU1dRXLqLhEdKsrFAjJIAAIAgCAAAN01hY0sKx97x43WeJsaYVRYcrKxNjSxNjOxcrKxFjWo6jHUaRnUVpYmsNLjOorSorn0uIqK0qK5txpEVNXUuTcXEEqk56oiMkUwAEggAAAADdXhVVhP0F4abE2LTYiqiLGdjSpsZVcrKo6jXpnWOmkrOxFadM+nPppEVFaVnXNppE1FX4mufa4ipq6iuXa4mkdJzaVCIyZVQIySAAAYAADrSpwq/QXhpTVoqacTUVpWfTKtIio6aVn0x0uM+kVfTPpz7axNZ1dRXNppE+Jqk1zaXE1FXUVy7XCqVVLm0qERkzqgR+EgAAAwACDqpRph+gvETqaAinE1HVAZ1cRWfRhjppGdqKA59tIiooDm00iaigOfS4VRQHLtcKpAc2lQiAZ1RUAJAABGCAIP//Z);
 }
 
 .botaoPaginas {
@@ -99,6 +101,15 @@ body {
     border-radius: 50px;
     border-color: rgb(84, 244, 255);
     background-color: black;
+}
+
+.botao:hover a {
+    display: block;
+    text-decoration: double;
+}
+
+.botao:hover img{
+    display: none;
 }
 
 .botao{
@@ -200,5 +211,60 @@ button:hover .tituloBotao{
     border-radius: 100px;
 }
 
+.olimpiadas {
+    width: 100%;
+    height: 500px;
+    background-color: black;
+    border-style: inset;
+    border-radius: 10px;
+    border-color: white;
+    display: flex;
+    justify-content: start;
+    flex-direction: row;
+    color: white;
+}
+
+.bannerOlimpiadas {
+    width: 30%;
+    height: 100%;
+    background-size: cover; 
+    background-image: url(./assets/olimpiadas.png);
+}
+
+.infoOlimpiadas {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+}
 
 
+.infoOlimpiadas h1{
+    font-style: inherit;
+    font-size: 50px
+}
+
+
+.infoOlimpiadas p {
+    font-style: italic;
+    font-size: 30px;
+}
+
+.botaoVideo{
+    width: 10%;
+    height: 50px;
+    border-style: solid;
+    border-radius: 20px;
+    border-color: aquamarine;
+    background-color: rgba(255, 255, 255, 0);
+    color: white;
+}
+
+.infoOlimpiadas button:hover{
+    background-color: white;
+    color: black;
+    border-color: aqua;
+}
