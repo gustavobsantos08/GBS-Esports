@@ -68,11 +68,17 @@
     </div>
 </div>
     <div class="olimpiadas">
-        <div class="infoOlimpiadas">
+        <div class="infoOlimpiadas" id="info">
             <h1>Olimpiadas <img src="./assets/olimpiadasLogo.png" width="30%" height="80px"></h1>
             <p> Os Jogos Olímpicos são a única competição atlética verdadeiramente global, multiesportiva e comemorativa do mundo. Com mais de 200 países que participam de mais de 400 eventos nos Jogos Olímpicos de Verão e de Inverno, as Olimpíadas é onde o mundo compete, se sente inspirado e está unido.</p>
 
-            <button onclick="video()" class="botaoVideo">Ver Video!</button>
+            <button onclick="video()" class="botaoVideo"> Ver video!</button>
+            
+        </div>
+        <div class="video" id="div_video">
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/OqQDiqB1N10?si=RKG5oInRd2RdtFNs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen style="border-radius: 20px;border-color: aqua;"></iframe> <br><br>
+
+            <button class="botaoVideo" onclick="voltar()">Voltar</button>
         </div>
     </div>
 
@@ -80,3 +86,15 @@
 </body>
 
 </html>
+
+<script>
+    function video(){
+        info.style.display = 'none'
+        div_video.style.display = 'flex'
+    }
+
+    function voltar(){
+        info.style.display = 'flex'
+        div_video.style.display = 'none'
+    }
+</script>
