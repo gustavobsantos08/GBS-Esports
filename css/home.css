@@ -112,18 +112,18 @@ body {
     border-radius: 50px;
     border-color: rgb(84, 244, 255);
     background-color: rgba(0, 0, 0, 0.274);
-    transition: 0.3s;
+    transition: 0.10s;
 }
 
 .botao:hover a {
     display: block;
     text-decoration: double;
-    transition: 0.3s;
+    transition: 0.10s;
 }
 
 .botao:hover img{
     display: none;
-    transition: 0.3s;
+    transition: 0.10s;
 }
 
 .botao{
@@ -132,7 +132,7 @@ body {
     border-radius: 100px;
     background-color: white;
     border-color: rgb(16, 43, 4);
-    transition: 0.3s;
+    transition: 0.10s;
 }
 
 .imagem{
