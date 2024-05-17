@@ -298,6 +298,7 @@ button:hover .tituloBotao{
     flex-direction: column;
 }
 
+
 .video button:hover{
     background-color: white;
     color: black;
