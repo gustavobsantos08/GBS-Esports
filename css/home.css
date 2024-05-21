@@ -5,7 +5,7 @@ body {
 .navBar {
     width: 100%;
     height: 80px;
-    background-color: black ;
+    background-color: white ;
     display: flex;
     justify-content: space-around;
     flex-direction: row;
@@ -13,11 +13,6 @@ body {
     border-color: black white;
     border-style: inset;
 
-}
-
-.navBar h1{
-    font-size: 30px;
-    color: #ffffff;
 }
 
 
@@ -44,7 +39,7 @@ body {
 
 .links2 a{
     text-decoration: none;
-    color: white;
+    color: rgb(0, 0, 0);
     font-size: larger;
     margin-right: 40px;
     transition: 0.3s;
@@ -53,7 +48,8 @@ body {
 
 .links2 a:hover{
     text-decoration: wavy;
-    color: aqua;
+    color: rgb(19, 102, 102);
+    font-size: 30px;
     transition: 0.3s;
 }
 
@@ -67,14 +63,15 @@ body {
 
 .links a{
     text-decoration: none;
-    color: aqua;
+    color: rgb(47, 14, 124);
     font-size: larger;
     transition: 0.3s;
 }
 
 .links a:hover{
     text-decoration: wavy;
-    color: white;
+    color: black;
+    font-size: 30px;
     transition: 0.3s;
 }
 
@@ -98,7 +95,7 @@ body {
     transition: 0.3s;
     background-repeat: no-repeat;
     background-size: cover;
-    background-image: url(data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBwgHBgkIBwgKCgkLDRYPDQwMDRsUFRAWIB0iIiAdHx8kKDQsJCYxJx8fLT0tMTU3Ojo6Iys/RD84QzQ5OjcBCgoKDQwNGg8PGjclHyU3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3N//AABEIAJQAzAMBIgACEQEDEQH/xAAbAAADAQEBAQEAAAAAAAAAAAAAAQIDBgUHBP/EABkQAQEBAQEBAAAAAAAAAAAAAAABEQJBMf/EABsBAAMBAQEBAQAAAAAAAAAAAAABAgMEBQYH/8QAGREBAQEBAQEAAAAAAAAAAAAAAAECERID/9oADAMBAAIRAxEAPwD4hgxeDHV4T1GBWHheR1AVYSbkEDwsTwyBguAgZEAACAAAAAAMAAAgZAAAAAAEG+DF4MepcMeowWKwYXg+owYvCxFwOs8GKwYyuFdQS7Cxncn1IMIsMgAXAQMi4AAAAACAAABAAGAAA/ZgxeDHveHN1GFi8GFcH1nYMXYTO4PqMKxeFYz1g+osJdhVjrB9Z4VWVjDWVdSSrCZ2GQASZAyKgAAgAAACMgYAAD08GLwY+o8OLrPCxphYm5HWdhY0wrGdyrrIVeJsZ3KuoTY0wrGWsH1nYlpU2ObeFyosTYupc+sqIjDKqIjBAgAkAAAAjIAAAG9rBjTCx9j4eb1nica4nEXJ9ZWFjSwrGdyuVkWLsJncq6zswq0sRWVyqVFiauxNjm3lUZ1NXU1y7y0iSVfiXPYZAyRVEBQmgAAgCMgAAAbocLGmFj7jy8nrPE2NMKxFyqVlYmxribGdipWVibGlibGNyuVniauxNjHUXKzsTY0sRjDUXKixNXYiuT6RcTU1dRXLqLhEdKsrFAjJIAAIAgCAAAN01hY0sKx97x43WeJsaYVRYcrKxNjSxNjOxcrKxFjWo6jHUaRnUVpYmsNLjOorSorn0uIqK0qK5txpEVNXUuTcXEEqk56oiMkUwAEggAAAADdXhVVhP0F4abE2LTYiqiLGdjSpsZVcrKo6jXpnWOmkrOxFadM+nPppEVFaVnXNppE1FX4mufa4ipq6iuXa4mkdJzaVCIyZVQIySAAAYAADrSpwq/QXhpTVoqacTUVpWfTKtIio6aVn0x0uM+kVfTPpz7axNZ1dRXNppE+Jqk1zaXE1FXUVy7XCqVVLm0qERkzqgR+EgAAAwACDqpRph+gvETqaAinE1HVAZ1cRWfRhjppGdqKA59tIiooDm00iaigOfS4VRQHLtcKpAc2lQiAZ1RUAJAABGCAIP//Z);
+    background-image: url(https://img.freepik.com/fotos-gratis/fundo-de-papel-de-parede-colorido-embacado-artistico_58702-8222.jpg);
 }
 
 .botaoPaginas {
@@ -108,11 +105,11 @@ body {
     justify-content: space-around;
     flex-direction: row;
     align-items: center;
-    border-style: ridge;
+    border-style: inset;
     border-radius: 50px;
-    border-color: rgb(84, 244, 255);
-    background-color: rgba(0, 0, 0, 0.274);
+    border-color: rgb(255, 255, 255);
     transition: 0.10s;
+    background-color: rgba(95, 158, 160, 0.582);
 }
 
 .botao:hover a {
@@ -131,7 +128,16 @@ body {
     height: 50%;
     border-radius: 100px;
     background-color: white;
-    border-color: rgb(16, 43, 4);
+    border-color: rgb(4, 26, 51);
+    transition: 0.10s;
+}
+
+.botao:hover{
+    width: 18%;
+    height: 55%;
+    border-radius: 100px;
+    background-color: white;
+    border-color: rgb(4, 26, 51);
     transition: 0.10s;
 }
 
@@ -146,7 +152,7 @@ body {
     color: black;
     font-style: italic;
     text-decoration: none;
-    font-size: larger;
+    font-size: 20px;
     transition: 0.3s;
 }
 
@@ -166,18 +172,17 @@ button:hover .tituloBotao{
 .esporte {
     width: 100%;
     height: 500px;
-    background-color: black;
+    background-color: rgb(50, 81, 82);
     border-style: groove;
     border-radius: 10px;
-    border-color: white;
-
+    border-color: black;
     display: flex;
     flex-direction: column;
     text-align: center;
 }
 
 .titulo {
-    color: white;
+    color: rgb(255, 255, 255);
     font-size: 40px;
     font-style: italic;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif    ;
@@ -225,20 +230,20 @@ button:hover .tituloBotao{
 .infoIMG img{
     width: 80%;
     height: 100%;
-    border-radius: 100px;
+    border-radius: 30px;
 }
 
 .olimpiadas {
     width: 100%;
     height: 500px;
-    background-color: black;
+    background-color: rgb(200, 212, 208);
     border-style: inset;
     border-radius: 10px;
-    border-color: white;
+    border-color: rgb(50, 81, 82);
     display: flex;
-    justify-content: start;
+    justify-content: center;
     flex-direction: row;
-    color: white;
+    color: black;
 }
 
 .bannerOlimpiadas {
@@ -249,7 +254,7 @@ button:hover .tituloBotao{
 }
 
 .infoOlimpiadas {
-    width: 100%;
+    width: 80%;
     height: 100%;
     display: flex;
     justify-content: center;
@@ -270,18 +275,20 @@ button:hover .tituloBotao{
 }
 
 .botaoVideo{
-    width: 10%;
+    width: 20%;
     height: 50px;
     border-style: solid;
     border-radius: 20px;
-    border-color: aquamarine;
-    background-color: rgba(255, 255, 255, 0);
+    border-color: white;
+    background-color: rgb(27, 65, 65);
     color: white;
     transition: 0.3s;
 }
 
 .infoOlimpiadas button:hover{
-    background-color: white;
+    width: 25%;
+    height: 60px;
+    background-color: rgb(255, 255, 255);
     color: black;
     border-color: aqua;
     transition: 0.3s;
@@ -300,9 +307,12 @@ button:hover .tituloBotao{
 
 
 .video button:hover{
-    background-color: white;
+    width: 25%;
+    height: 60px;
+    background-color: rgb(255, 255, 255);
     color: black;
     border-color: aqua;
+    transition: 0.3s;
 }
 
 .quizz {
@@ -312,25 +322,27 @@ button:hover .tituloBotao{
     justify-content: space-around;
     flex-direction: column;
     border-radius: 10px;
-    border-color: white;
+    border-color: aqua;
     border-style: inset;
     align-items: center;
     text-align: center;
-    background-color: black;
-    color: white;
+    background-color: rgb(95, 158, 160);
+
 }
 
 .quizz h1{
+    color: white;
     font-size: 40px;
-    font-family: fantasy;
+    font-family: cursive;
     font-style: italic;
 }
 
 .quizz p{
     font-size: 30px;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: cursive;
     font-style: italic;
-    color: rgb(143, 143, 190);
+    color: white;
+
 }
 
 .quizz1 {
@@ -341,7 +353,6 @@ button:hover .tituloBotao{
     flex-direction: row;
     align-items: center;
     text-align: center;
-    background-color: wheite;
 }
 
 .boxQuizz {
@@ -359,27 +370,41 @@ button:hover .tituloBotao{
     border-radius: 50px;
     border-style: groove;
     border-color: rgb(161, 219, 200);
+    background-color: rgba(255, 255, 255, 0.678);
 }
 
 .botaoQuizz {
     width: 60%;
     height: 60px;   
-    background-color: black;
+    background-color: white;
     border-style: inset;
-    border-radius: 30px;
+    border-radius: 50px;
     border-color: aqua;
-    transition: 0.4s;
     color: white;
+    transition: 0.6s;
 }
+
+.botaoQuizz a{
+color: black;
+text-decoration: none;
+font-size: 15px;
+}
+
+.botaoQuizz a:hover{
+    color: white;
+    text-decoration: none;
+    font-size:20px;
+}
+
 
 
 .botaoQuizz:hover{
     width: 70%;
     height: 70px;
-    color: black;
-    background-color: white;
+    color: white;
+    background-color: rgb(19, 102, 102);
     border-style: inset;
     border-radius: 30px;
-    border-color: aqua;
-    transition: 0.4s;
+    border-color: white;
+    transition: 0.6s;
 }

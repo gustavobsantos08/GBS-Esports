@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/jogo.css">
+</head>
+
+<body>
+    <div class="timeA">
+        <input id="" placeholder="Nome do time:">
+        <div class="caixas">
+        <input id="iptGoleiro" class="input1" placeholder="Goleiro">
+        <input id="iptFixo" class="input1" placeholder="Fixo">
+        <input id="iptEsquerdo" class="input1" placeholder="Ala Esquerdo">
+        <input id="iptDireito" class="input1" placeholder="Ala Direito">
+        <input id="iptPivo" class="input1" placeholder="Pivô">
+    </div>
+    <button onclick="gerar()"> Gerar time </button>
+    </div>
+
+    
+
+
+    <div class="jogadores">
+        
+        <div class="escalacao">
+            <p id="p_goleiro"> </p>
+        </div>
+
+        <div class="escalacao">
+            <p id="p_fixo"> </p>
+        </div>
+
+        <div class="escalacao1">
+            <p id="p_alaEsquerda"> </p>
+            <p id="p_alaDireita"></p>
+        </div>
+
+        <div class="escalacao">
+            <p id="p_pivo"> </p>
+        </div>
+
+    </div>
+
+</body>
+
+</html>
+
+<script>
+    function gerar() {
+        var goleiro = iptGoleiro.value;
+        var fixo = iptFixo.value;
+        var alaE = iptEsquerdo.value;
+        var alaD = iptDireito.value;
+        var pivo = iptPivo.value;
+
+        if (goleiro == "" || fixo == "" || alaE == "" || alaD == "" || pivo == "") {
+            alert(`Todas as posições da quadra deve ser preenchida`)
+        } else {
+            p_goleiro.innerHTML += `${goleiro}`
+            p_fixo.innerHTML += `${fixo}`
+            p_alaEsquerda.innerHTML += `${alaE}`
+            p_alaDireita.innerHTML += `${alaD}`
+            p_pivo.innerHTML += `${pivo}`
+        }
+
+
+
+
+    }
+</script>
