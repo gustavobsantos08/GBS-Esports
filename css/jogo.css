@@ -1,17 +1,26 @@
 body {
-    display: contents;
     display: flex;
     justify-content: center;
-    align-items: center;
     flex-direction: column;
-    text-align: center;
+    background-color: black;
+}
+
+.jogo {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    background-color: black;
 }
 
 .timeA {
     width: 100%;
-    height: 300px;
-    background-color: rgba(128, 128, 128, 0.363);
+    height: 950px;
+    background-image: url(https://img.freepik.com/fotos-premium/textura-de-tecido-de-veludo-azul-escuro-usado-como-fundo-fundo-de-tecido-azul-escuro-vazio-de-material-textil-macio-e-liso-ha-espaco-para-textx9_661047-2252.jpg);
     border-radius: 30px;
+    border-style: inset;
+    border-color: white;
     display: flex;
     justify-content: center;
     text-align: center;
@@ -19,24 +28,69 @@ body {
     align-items: center;
 }
 
+.timeA p{
+    font-size: 20px;
+    color: white;
+}
+
 .caixas {
+    margin-top: 10px;
     width: 80%;
-    height: 80%;
+    height: 10%;
     display: flex;
     justify-content: space-evenly;
+    text-align: center;
+}
+
+.botoes {
+    width: 80%;
+    height: 10%;
+    display: flex;
+    justify-content: center;
     align-items: center;
     text-align: center;
+}
+
+.botao{
+    background-color: rgb(238, 238, 255);
+    color: black;
+    border-radius: 20px;
+    margin-bottom: 20px;
+    border-style: none;
+    width: 20%;
+    height: 30px;
+}
+
+.botao:hover {
+    background-color: rgb(32, 32, 56);
+    color: white;
+    border-radius: 20px;
+    margin-bottom: 20px;
+    border-style: none;
+    width: 22%;
+    height: 35px;
 }
 
 .input1 {
     width: 150px;
     height: 30px;
-    background-color: rgb(170, 170, 253);
-    color: black;
+    background-color: rgb(21, 21, 46);
+    color: white;
     border-radius: 40px;
-    border-color: black;
+    border-color: white;
     text-align: center;
 }
+
+.input2 {
+    width: 150px;
+    height: 30px;
+    background-color: white;
+    border-radius: 5px;
+    border-color: rgb(67, 233, 255);
+    color: black;
+    text-align: center;
+}
+
 
 .jogadores {
     width: 70%;
@@ -44,7 +98,6 @@ body {
     display: flex;
     justify-content: center;
     background-image: url(../assets/depositphotos_59001951-stock-illustration-futsal-court.jpg);
-    position: 100%;
     background-size: cover;
     flex-direction: row;
     align-items: center;
@@ -64,7 +117,7 @@ body {
     width: 20%;
     height: 80%;
     text-align: center;
-    align-items: center;
+    align-items: start;
     display: flex;
     justify-content: space-around;
     flex-direction: column;
@@ -87,3 +140,115 @@ body {
     color: white;
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
+
+.simulacao {
+    width: 100%;
+    height: 210px;
+    background-color: rgb(21, 21, 46);
+    border-radius: 10px;
+    border-color: rgb(255, 255, 255);
+    border-style: groove;
+    display: flex;
+    justify-content: start;
+    flex-direction: row;
+}
+
+.box_simulacao {
+    width: 50%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.botao_simular {
+    width: 25%;
+    height: 35%;
+    background-color: white;
+    border-radius: 10px;
+    border-style: solid;
+    font-size: 20px;
+}
+
+.botao_simular:hover {
+    width: 26%;
+    height: 36%;
+    font-size: 23px;
+    background-color: white;
+    border-radius: 10px;
+    border-style: solid;
+}
+
+.placar {
+    width: 70%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    flex-direction: row;
+}
+
+.placar_final {
+    width: 70%;
+    height: 95%;
+    border-radius: 10px;
+    border-style: groove;
+    border-color: white;
+    background-color: rgb(26, 25, 25);
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    align-items: center;
+    text-align: center;
+}
+
+.resultado {
+    width: 50%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+}
+
+.resultado p{
+    font-size: 23px;
+    font-style: italic;
+    color: white;
+}
+
+.placar_time1 {
+    width: 40%;
+    height: 40%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    border-radius: 20px;
+    border-style: solid;
+    border-color: white;
+    background-color: black;
+    color: red;
+    font-size: 35px;
+    font-family: fantasy;
+}
+
+.placar_time2 {
+    width: 40%;
+    height: 40%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    border-radius: 20px;
+    border-style: solid;
+    border-color: white;
+    background-color: black;
+    color: red;
+    font-size: 35px;
+    font-family: fantasy;
+}
+
