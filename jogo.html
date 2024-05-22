@@ -21,7 +21,7 @@
             </div>
 
             <div class="botoes">  
-                <button onclick="gerar_time_a()" class="botao" style="margin-right: 20px;">Gerar time</button>
+                <button onclick="gerar_time_a()" class="botao" style="margin-right: 20px;" id="botaoTimeA">Gerar time</button>
 
                 <button onclick="historico_time_a()" class="botao">Ver Histórico</button>
 
@@ -161,6 +161,8 @@
             p_alaEsquerda.innerHTML += `${alaE} `
             p_alaDireita.innerHTML += `${alaD} `
             p_pivo.innerHTML += `${pivo} `
+
+            botaoTimeA.style.display = 'none';
         }
     }
 
@@ -254,12 +256,18 @@
             placar1++
             placar_time1.innerHTML = `${placar1}`
             
-
         } else {
             alert(`GOL DO ${timeB}`)
             placar2++
             placar_time2.innerHTML = `${placar2}`
         }
+
+        if(placar1 == 7 || placar2 == 7) {
+            placar_time1.innerHTML = `${placar1}`
+            placar_time2.innerHTML = `${placar2}`
+
+        }
+
 
         if(aleatorio == 2) {
             gols2++

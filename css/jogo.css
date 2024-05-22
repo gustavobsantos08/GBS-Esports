@@ -16,9 +16,9 @@ body {
 
 .timeA {
     width: 100%;
-    height: 950px;
+    height: 1050px;
     background-image: url(https://img.freepik.com/fotos-premium/textura-de-tecido-de-veludo-azul-escuro-usado-como-fundo-fundo-de-tecido-azul-escuro-vazio-de-material-textil-macio-e-liso-ha-espaco-para-textx9_661047-2252.jpg);
-    border-radius: 30px;
+    border-radius: 20px;
     border-style: inset;
     border-color: white;
     display: flex;
@@ -93,12 +93,14 @@ body {
 
 
 .jogadores {
-    width: 70%;
+    width: 90%;
     height: 600px;
+    background: 100%;
     display: flex;
     justify-content: center;
-    background-image: url(../assets/depositphotos_59001951-stock-illustration-futsal-court.jpg);
+    background-image: url("https://s2-ge.glbimg.com/Z863-hktUNfLbCsofQC7KdOf6Lw=/0x0:3980x2239/984x0/smart/filters:strip_icc()/i.s3.glbimg.com/v1/AUTH_bc8228b6673f488aa253bbcb03c80ec5/internal_photos/bs/2020/O/p/qhGnNFTYC1pg1PJjrmZQ/gettyimages-1213721542.jpg");
     background-size: cover;
+    border-radius: 50px;
     flex-direction: row;
     align-items: center;
     text-align: center;
@@ -218,6 +220,7 @@ body {
     font-size: 23px;
     font-style: italic;
     color: white;
+    text-shadow: 0.1em 0.1em 0.2em red;
 }
 
 .placar_time1 {
