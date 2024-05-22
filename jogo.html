@@ -100,12 +100,13 @@
                 <button onclick="gerar_time_b()" class="botao" style="margin-right: 20px;" id="botaoTimeB">Gerar time</button>
 
                 <button onclick="historico_time_b()" class="botao">Ver Histórico</button>
-
-                <div id="divMsg"></div>
             </div>
 
-            <div class="jogadores">
 
+            
+
+            <div class="jogadores">
+                
                 <div class="escalacao">
                     <p id="p_goleiro2"> </p>
                 </div>
@@ -252,12 +253,11 @@
         var par = aleatorio % 2
 
         if (par == 0) {
-            alert(`GOL DO ${timeA}`)
+            
             placar1++
             placar_time1.innerHTML = `${placar1}`
             
         } else {
-            alert(`GOL DO ${timeB}`)
             placar2++
             placar_time2.innerHTML = `${placar2}`
         }
@@ -270,29 +270,37 @@
 
 
         if(aleatorio == 2) {
+            alert(`GOL DO(A) ${fixo}!! : ${placar1} x ${placar2}`)
             gols2++
             p_fixo.innerHTML = `${fixo} | Gols: ${gols2}`
         } else if(aleatorio == 4) {
+            alert(`GOL DO(A) ${alaE}!! : ${placar1} x ${placar2}`)
             gols4++
             p_alaEsquerda.innerHTML = `${alaE} | Gols: ${gols4}`
         } else if(aleatorio == 6) {
+            alert(`GOL DO(A) ${alaD} !!: ${placar1} x ${placar2}`)
             gols6++
             p_alaDireita.innerHTML = `${alaD} | Gols: ${gols6}`
         } else  if(aleatorio == 8) {
+            alert(`GOL DO(A) ${pivo}!! : ${placar1} x ${placar2}`)
             gols8++
             p_pivo.innerHTML = `${pivo} | Gols: ${gols8} `
         }
 
         if(aleatorio == 1) {
+            alert(`GOL DO(A) ${fixo2} !! : ${placar1} x ${placar2}`)
             gols1++
             p_fixo2.innerHTML = `${fixo2} | Gols: ${gols1}`
         } else if(aleatorio == 3) {
+            alert(`GOL DO(A) ${alaE2}!! : ${placar1} x ${placar2}`)
             gols3++
             p_alaEsquerda2.innerHTML = `${alaE2} | Gols: ${gols3}`
         } else if(aleatorio == 5) {
+            alert(`GOL DO(A) ${alaD2}!! : ${placar1} x ${placar2}`)
             gols5++
             p_alaDireita2.innerHTML = `${alaD2} | Gols :${gols5}`
-        } else  if(aleatorio == 7) { 
+        } else  if(aleatorio == 7) {
+            alert(`GOL DO(A)!! ${pivo2} : ${placar1} x ${placar2}`) 
             gols7++
             p_pivo2.innerHTML = `${pivo2} | Gols :${gols7}`
         }
