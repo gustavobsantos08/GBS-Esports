@@ -2,13 +2,69 @@ body {
     display: flex;
     justify-content: center;
     flex-direction: column;
+    align-items: center;
+    text-align: center;
     background-color: black;
+}
+
+.botao_inicar_simulador {
+    width: 20%;
+    height: 50px;
+    border-radius: 20px;
+    font-size: 20px;
+    border-style: inset;
+    border-color: yellowgreen;
+}
+
+.botao_inicar_simulador:hover {
+    width: 25%;
+    height: 60px;
+    border-radius: 20px;
+    font-size: 25px;
+    border-style: inset;
+    border-color: white;
+    background-color: yellowgreen;
+    color: white;
+}
+
+.regras {
+    display: flex;
+    justify-content: space-evenly;
+    width: 70%;
+    height: 500px;
+    border-style: solid;
+    border-color: white;
+    border-radius: 20px;
+    background-color: black;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.regras h1 {
+    font-size: 30px;
+    color: white;
+    text-shadow: 0.1em 0.1em rgb(44, 44, 44);
+}
+
+.regras h2 {
+    font-size: 25px;
+    color: white;
+    text-shadow: 0.1em 0.1em rgb(49, 49, 49);
+}
+
+.textos {
+    text-transform: lowercase;
+    text-align: start;
+    align-items: center;
+    font-size: 20px;
+    color: white;
 }
 
 .jogo {
     width: 100%;
     height: 100%;
-    display: flex;
+    display: none;
     justify-content: center;
     flex-direction: column;
     background-color: black;
@@ -17,7 +73,9 @@ body {
 .timeA {
     width: 100%;
     height: 1050px;
-    background-image: url(https://img.freepik.com/fotos-premium/textura-de-tecido-de-veludo-azul-escuro-usado-como-fundo-fundo-de-tecido-azul-escuro-vazio-de-material-textil-macio-e-liso-ha-espaco-para-textx9_661047-2252.jpg);
+    background-image: url(https://i.pinimg.com/736x/5e/e7/61/5ee76180e98f26c27be7752ad70a2f09.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
     border-radius: 20px;
     border-style: inset;
     border-color: white;
@@ -28,7 +86,7 @@ body {
     align-items: center;
 }
 
-.timeA p{
+.timeA p {
     font-size: 20px;
     color: white;
 }
@@ -51,7 +109,7 @@ body {
     text-align: center;
 }
 
-.botao{
+.botao {
     background-color: rgb(238, 238, 255);
     color: black;
     border-radius: 20px;
@@ -132,6 +190,7 @@ body {
     font-size: 30px;
     color: white;
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    text-transform: uppercase;
 }
 
 .escalacao1 p {
@@ -141,6 +200,7 @@ body {
     font-size: 30px;
     color: white;
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    text-transform: uppercase;
 }
 
 .simulacao {
@@ -216,7 +276,7 @@ body {
     text-align: center;
 }
 
-.resultado p{
+.resultado p {
     font-size: 23px;
     font-style: italic;
     color: white;
@@ -265,7 +325,7 @@ body {
     background-color: rgba(21, 21, 46, 0.185);
 }
 
-.div_vitorias{
+.div_vitorias {
     width: 50%;
     height: 100%;
     display: none;
@@ -275,7 +335,7 @@ body {
     text-align: center;
 }
 
-.div_vitorias p{
+.div_vitorias p {
     font-size: 20px;
     font-style: italic;
     text-align: center;

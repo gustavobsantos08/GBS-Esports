@@ -9,7 +9,27 @@
 </head>
 
 <body>
-     <div id="jogo">
+    
+    <div class="regras" id="regras">
+        <h1> Regras do simulador</h1>
+        <ul>
+
+        <li class="textos">O simulador tem como objetivo simular uma partida de Futsal</li>
+
+        <li class="textos">As duas equipes devem ser preenchidas com seus o nome de seus jogadores</li>
+
+        <li class="textos">A primeira equipe a fazer 7 gols vence.</li>
+
+        <li class="textos">Os nomes dos times Devem ser colocados</li>
+
+    </ul>
+
+    <button class="botao_inicar_simulador" onclick="iniciar_simulador()">Iniciar simulação</button>
+
+    </div>
+
+
+     <div id="jogo" class="jogo">
         <div class="timeA">
             <p>Time A</p> <input class="input2" id="iptNomeA" placeholder="Nome do time" style="margin-bottom: 70px;">
             <div class="caixas">
@@ -57,8 +77,8 @@
                     id="botaoSimular"> <b> Simular </b> </button>
 
                     <div class="div_vitorias" id="vitorias">
-                    <p id="vitoria_time_a" style="text-shadow: 0.1em 0.1em 0.2em rgb(0, 0, 0); color: rgb(78, 255, 78);"></p>
-                    <p id="vitoria_time_b" style="text-shadow: 0.1em 0.1em 0.2em rgb(0, 0, 0); color: rgb(255, 31, 31);"> </p>
+                    <p id="vitoria_time_a" style="text-shadow: 0.1em 0.1em 0.2em rgb(0, 0, 0); color: rgb(171, 252, 118);"></p>
+                    <p id="vitoria_time_b" style="text-shadow: 0.1em 0.1em 0.2em rgb(0, 0, 0); color: rgb(67, 255, 255);"> </p>
                     </div>
             </div>
 
@@ -152,6 +172,12 @@
     var vitoria2 = 0
 
     var derrota = 0
+
+    function iniciar_simulador(){
+        jogo.style.display = 'flex';
+        regras.style.display = 'none';
+
+    }
 
 
     function gerar_time_a() {
@@ -255,7 +281,9 @@
         var alaD2 = iptDireito2.value;
         var pivo2 = iptPivo2.value;
 
-        var aleatorio = (Math.random() * 9 + 1).toFixed(0); // jogadores de linha
+        var aleatorio = (Math.random() * 7 + 1).toFixed(0); // jogadores de linha
+
+        var aleatorio2 = (Math.random() * 1 + 1).toFixed(0); // jogadores de linha
 
         var par = aleatorio % 2
 
@@ -266,15 +294,10 @@
         } else {
             placar2++
             placar_time2.innerHTML = `${placar2}`
-        }if (aleatorio == 9){
-            placar2--
-            placar_time2.innerHTML = `${placar2}`
-        } else if (aleatorio == 10){
-            placar1--
-            placar_time1.innerHTML = `${placar1}`
         }
 
         if(placar1 == 7 || placar2 == 7){
+
             if(placar1 == 7){
                 vitoria1++
                 vitoria_time_a.innerHTML = `${timeA} Partidas ganhas: ${vitoria1}`
@@ -286,8 +309,33 @@
             placar1 = 0
             placar2 = 0
 
+            gols1 = 0
+            gols2 = 0
+            gols3 = 0
+            gols4 = 0
+            gols5 = 0
+            gols6 = 0
+            gols7 = 0
+            gols8 = 0
+            defesa1 = 0
+            defesa2 = 0 
+
+
             placar_time1.innerHTML = `${placar1}`
             placar_time2.innerHTML = `${placar2}`
+
+            p_fixo.innerHTML = `${fixo} | Gols: <span style="color: rgb(66, 255, 66);"> ${gols2} </span>`
+            p_alaEsquerda.innerHTML = `${alaE} | Gols: <span style="color: rgb(66, 255, 66);"> ${gols4} </span>`
+            p_alaDireita.innerHTML = `${alaD} | Gols: <span style="color: rgb(66, 255, 66);"> ${gols6} </span>`
+            p_pivo.innerHTML = `${pivo} | Gols: <span style="color: rgb(66, 255, 66);"> ${gols8} </span>`
+            p_goleiro.innerHTML = `${goleiro} | Defesas: <span style="color: rgb(66, 255, 66);"> ${defesa1} </span>`
+            p_fixo2.innerHTML = `${fixo2} | Gols: <span style="color: rgb(66, 255, 66);"> ${gols1} </span>`
+            p_alaEsquerda2.innerHTML = `${alaE2} | Gols: <span style="color: rgb(66, 255, 66);"> ${gols3} </span>`
+            p_alaDireita2.innerHTML = `${alaD2} | Gols: <span style="color: rgb(66, 255, 66);"> ${gols5} </span>`
+            p_pivo2.innerHTML = `${pivo2} | Gols: <span style="color: rgb(66, 255, 66);"> ${gols7} </span>`
+            p_goleiro2.innerHTML = `${goleiro2} | Defesas: <span style="color: rgb(66, 255, 66);"> ${defesa2} </span>`
+
+            
         }
 
         if(aleatorio == 2) {
@@ -306,8 +354,8 @@
             alert(`GOL DO(A) ${pivo}!! : ${placar1} x ${placar2}`)
             gols8++
             p_pivo.innerHTML = `${pivo} | Gols: <span style="color: rgb(66, 255, 66);"> ${gols8} </span> `
-        } else  if(aleatorio == 10) {
-            alert(`Defesa do(A) ${goleiro}!! Segue o placar : ${placar1 - 1} x ${placar2}`)
+        } else  if(aleatorio2 == 2) {
+            alert(`Defesa do(A) ${goleiro}!! Segue o placar : ${placar1} x ${placar2}`)
             defesa1++
             p_goleiro.innerHTML = `${goleiro} | Defesas: <span style="color: rgb(66, 255, 66);"> ${defesa1} </span>`
         }
@@ -328,8 +376,8 @@
             alert(`GOL DO(A)!! ${pivo2} : ${placar1} x ${placar2}`) 
             gols7++
             p_pivo2.innerHTML = `${pivo2} | Gols : <span style="color: rgb(66, 255, 66);"> ${gols7} </span>`
-        } else  if(aleatorio == 9) {
-            alert(`Defesa do(A) ${goleiro2}!! Segue o placar : ${placar1} x ${placar2 - 1}`)
+        } else  if(aleatorio2 == 1) {
+            alert(`Defesa do(A) ${goleiro2}!! Segue o placar : ${placar1} x ${placar2}`)
             defesa2++
             p_goleiro2.innerHTML = `${goleiro2} | Defesas: <span style="color: rgb(66, 255, 66);"> ${defesa2} </span> `
         }

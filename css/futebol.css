@@ -1,0 +1,113 @@
+body {
+    display: contents;
+}
+
+.navBar {
+    width: 100%;
+    height: 80px;
+    background-color: white ;
+    display: flex;
+    justify-content: space-around;
+    flex-direction: row;
+    position: fixed;
+    border-color: black white;
+    border-style: inset;
+
+}
+
+
+.links {
+    width: 10%;
+    height: 50%;
+    flex-direction: row;
+    display: flex;
+    justify-content: space-around;
+    text-align: center;
+    transition: 0.3s;
+}
+
+.links2 {
+    width: 40%;
+    height: 50%;
+    flex-direction: row;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    transition: 0.3s;
+}
+
+
+.links2 a{
+    text-decoration: none;
+    color: rgb(0, 0, 0);
+    font-size: larger;
+    margin-right: 40px;
+    transition: 0.3s;
+    text-shadow: 0.1em 0.1em 0.2em rgb(0, 0, 0);
+}
+
+
+.links2 a:hover{
+    text-decoration: wavy;
+    color: rgb(19, 102, 102);
+    font-size: 30px;
+    transition: 0.3s;
+    text-shadow: 0.1em 0.1em 0.2em rgb(255, 255, 255);
+
+}
+
+.links2 li{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    list-style-type: none;
+}
+
+.links a{
+    text-decoration: none;
+    color: rgb(47, 14, 124);
+    font-size: larger;
+    transition: 0.3s;
+    text-shadow: 0.1em 0.1em 0.2em rgb(191, 210, 255);
+
+}
+
+.links a:hover{
+    text-decoration: wavy;
+    color: black;
+    font-size: 30px;
+    transition: 0.3s;
+    text-shadow: 0.1em 0.1em 0.2em rgb(255, 255, 255);
+
+}
+
+.links li{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    list-style-type: none;
+}
+
+.banner {
+    width: 100%;
+    height: 607px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-image: url(https://i.pinimg.com/originals/e7/0a/ca/e70aca21915f4b9ce6b1bd29a7fb33bf.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.futsal {
+    width: 80%; 
+    height: 50%;
+    background-color: rgba(255, 255, 255, 0.384);
+    border-radius: 30px;
+    border-style: solid;
+    border-color: white;
+    flex-direction: row;
+}
