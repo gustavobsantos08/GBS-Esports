@@ -23,8 +23,6 @@
             <div class="botoes">  
                 <button onclick="gerar_time_a()" class="botao" style="margin-right: 20px;" id="botaoTimeA">Gerar time</button>
 
-                <button onclick="historico_time_a()" class="botao">Ver Histórico</button>
-
                 <div id="divMsg"></div>
             </div>
 
@@ -57,7 +55,15 @@
 
                 <button onclick="simular()" class="botao_simular" style="display: none; margin-left: 20px;"
                     id="botaoSimular"> <b> Simular </b> </button>
+
+                    <div class="div_vitorias" id="vitorias">
+                    <p id="vitoria_time_a" style="text-shadow: 0.1em 0.1em 0.2em rgb(0, 0, 0); color: rgb(78, 255, 78);"></p>
+                    <p id="vitoria_time_b" style="text-shadow: 0.1em 0.1em 0.2em rgb(0, 0, 0); color: rgb(255, 31, 31);"> </p>
+                    </div>
             </div>
+
+            
+
 
             <div class="placar">
 
@@ -98,12 +104,7 @@
 
             <div class="botoes">
                 <button onclick="gerar_time_b()" class="botao" style="margin-right: 20px;" id="botaoTimeB">Gerar time</button>
-
-                <button onclick="historico_time_b()" class="botao">Ver Histórico</button>
             </div>
-
-
-            
 
             <div class="jogadores">
                 
@@ -121,7 +122,7 @@
                 </div>
 
                 <div class="escalacao">
-                    <p id="p_pivo2"></p>
+                    <p id="p_pivo2" ></p>
                 </div> 
 
             </div>
@@ -144,7 +145,13 @@
     var gols6 = 0
     var gols7 = 0
     var gols8 = 0
+    var defesa1 = 0
+    var defesa2 = 0
 
+    var vitoria1 = 0
+    var vitoria2 = 0
+
+    var derrota = 0
 
 
     function gerar_time_a() {
@@ -248,62 +255,85 @@
         var alaD2 = iptDireito2.value;
         var pivo2 = iptPivo2.value;
 
-        var aleatorio = (Math.random() * 7 + 1).toFixed(0);
+        var aleatorio = (Math.random() * 9 + 1).toFixed(0); // jogadores de linha
 
         var par = aleatorio % 2
 
         if (par == 0) {
-            
             placar1++
             placar_time1.innerHTML = `${placar1}`
             
         } else {
             placar2++
             placar_time2.innerHTML = `${placar2}`
+        }if (aleatorio == 9){
+            placar2--
+            placar_time2.innerHTML = `${placar2}`
+        } else if (aleatorio == 10){
+            placar1--
+            placar_time1.innerHTML = `${placar1}`
         }
 
-        if(placar1 == 7 || placar2 == 7) {
+        if(placar1 == 7 || placar2 == 7){
+            if(placar1 == 7){
+                vitoria1++
+                vitoria_time_a.innerHTML = `${timeA} Partidas ganhas: ${vitoria1}`
+            } else if (placar2 == 7){
+                vitoria2++
+                vitoria_time_b.innerHTML = ` ${timeB} Partidas ganhas: ${vitoria2}`
+            }
+
+            placar1 = 0
+            placar2 = 0
+
             placar_time1.innerHTML = `${placar1}`
             placar_time2.innerHTML = `${placar2}`
-
         }
-
 
         if(aleatorio == 2) {
             alert(`GOL DO(A) ${fixo}!! : ${placar1} x ${placar2}`)
             gols2++
-            p_fixo.innerHTML = `${fixo} | Gols: ${gols2}`
+            p_fixo.innerHTML = `${fixo} | Gols: <span style="color: rgb(66, 255, 66);"> ${gols2} </span>`
         } else if(aleatorio == 4) {
             alert(`GOL DO(A) ${alaE}!! : ${placar1} x ${placar2}`)
             gols4++
-            p_alaEsquerda.innerHTML = `${alaE} | Gols: ${gols4}`
+            p_alaEsquerda.innerHTML = `${alaE} | Gols: <span style="color: rgb(66, 255, 66);"> ${gols4} </span>`
         } else if(aleatorio == 6) {
             alert(`GOL DO(A) ${alaD} !!: ${placar1} x ${placar2}`)
             gols6++
-            p_alaDireita.innerHTML = `${alaD} | Gols: ${gols6}`
+            p_alaDireita.innerHTML = `${alaD} | Gols: <span style="color: rgb(66, 255, 66);"> ${gols6} </span>`
         } else  if(aleatorio == 8) {
             alert(`GOL DO(A) ${pivo}!! : ${placar1} x ${placar2}`)
             gols8++
-            p_pivo.innerHTML = `${pivo} | Gols: ${gols8} `
+            p_pivo.innerHTML = `${pivo} | Gols: <span style="color: rgb(66, 255, 66);"> ${gols8} </span> `
+        } else  if(aleatorio == 10) {
+            alert(`Defesa do(A) ${goleiro}!! Segue o placar : ${placar1 - 1} x ${placar2}`)
+            defesa1++
+            p_goleiro.innerHTML = `${goleiro} | Defesas: <span style="color: rgb(66, 255, 66);"> ${defesa1} </span>`
         }
 
         if(aleatorio == 1) {
             alert(`GOL DO(A) ${fixo2} !! : ${placar1} x ${placar2}`)
             gols1++
-            p_fixo2.innerHTML = `${fixo2} | Gols: ${gols1}`
+            p_fixo2.innerHTML = `${fixo2} | Gols: <span style="color: rgb(66, 255, 66);"> ${gols1} </span>`
         } else if(aleatorio == 3) {
             alert(`GOL DO(A) ${alaE2}!! : ${placar1} x ${placar2}`)
             gols3++
-            p_alaEsquerda2.innerHTML = `${alaE2} | Gols: ${gols3}`
+            p_alaEsquerda2.innerHTML = `${alaE2} | Gols: <span style="color: rgb(66, 255, 66);"> ${gols3} </span>`
         } else if(aleatorio == 5) {
             alert(`GOL DO(A) ${alaD2}!! : ${placar1} x ${placar2}`)
             gols5++
-            p_alaDireita2.innerHTML = `${alaD2} | Gols :${gols5}`
+            p_alaDireita2.innerHTML = `${alaD2} | Gols : <span style="color: rgb(66, 255, 66);"> ${gols5} </span>`
         } else  if(aleatorio == 7) {
             alert(`GOL DO(A)!! ${pivo2} : ${placar1} x ${placar2}`) 
             gols7++
-            p_pivo2.innerHTML = `${pivo2} | Gols :${gols7}`
+            p_pivo2.innerHTML = `${pivo2} | Gols : <span style="color: rgb(66, 255, 66);"> ${gols7} </span>`
+        } else  if(aleatorio == 9) {
+            alert(`Defesa do(A) ${goleiro2}!! Segue o placar : ${placar1} x ${placar2 - 1}`)
+            defesa2++
+            p_goleiro2.innerHTML = `${goleiro2} | Defesas: <span style="color: rgb(66, 255, 66);"> ${defesa2} </span> `
         }
 
+        vitorias.style.display = 'flex';
     }
 </script>
