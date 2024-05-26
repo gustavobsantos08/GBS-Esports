@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simulador de partida de Vôleibol</title>
+    <link rel="stylesheet" href="./css/simulador_volei.css">
+</head>
+
+<body>
+    
+    <div class="regras" id="regras">
+        <h1> Regras do simulador</h1>
+        <ul>
+
+        <li class="textos">O simulador tem como objetivo simular uma partida de Futsal</li>
+
+        <li class="textos">As duas equipes devem ser preenchidas com seus o nome de seus jogadores</li>
+
+        <li class="textos">A primeira equipe a fazer 7 gols vence.</li>
+
+        <li class="textos">Os nomes dos times Devem ser colocados</li>
+
+    </ul>
+
+    <button class="botao_inicar_simulador" onclick="iniciar_simulador()">Iniciar simulação</button>
+
+    </div>
+
+
+     <div id="jogo" class="jogo">
+        <div class="timeA">
+            <p style="color: rgb(255, 255, 255); font-size: 25px; font-style: oblique;"><b>Time A</b></p> 
+            <input class="input2" id="iptNomeA" placeholder="Nome do time" style="margin-bottom: 70px;">
+            <div class="caixas">
+                <input id="iptOposto" class="input1" placeholder="Oposto" >
+                <input id="iptLibero" class="input1" placeholder="Libero">
+                <input id="iptPonteDireito" class="input1" placeholder="Ponteiro Direito">
+                <input id="iptPonteEsquerdo" class="input1" placeholder="Ponteiro Esquerdo">
+                <input id="iptCentral" class="input1" placeholder="Central">
+                <input id="iptLevantador" class="input1" placeholder="Levantador">
+
+                
+            </div>
+            <button onclick="gerar_time_a()" class="botao" style="margin-right: 20px;" id="botaoTimeA">Gerar time</button>
+
+
+            <div class="simulacao">
+
+                <div class="box_simulacao">
+                    <button onclick="iniciar()" class="botao_simular" id="botaoIniciar"> <b> Iníciar </b> </button>
+    
+                    <button onclick="simular()" class="botao_simular" style="display: none; margin-left: 20px;"
+                        id="botaoSimular"> <b> Simular </b> </button>
+    
+                        <div class="div_vitorias" id="vitorias">
+                        <p id="vitoria_time_a" style="text-shadow: 0.1em 0.1em 0.2em rgb(0, 0, 0); color: rgb(171, 252, 118);"></p>
+                        <p id="vitoria_time_b" style="text-shadow: 0.1em 0.1em 0.2em rgb(0, 0, 0); color: rgb(67, 255, 255);"> </p>
+                        </div>
+                </div>
+    
+                <div class="placar">
+    
+                    <div class="placar_final">
+    
+    
+                        <div class="resultado" style="border-right-style: dashed; border-right-color: white;">
+    
+                            <b>
+                                <p id="nome_time1"> </p>
+                            </b>
+                            <div class="placar_time1" id="placar_time1"></div>
+    
+                        </div>
+    
+                        <div class="resultado">
+    
+                            <b>
+                                <p id="nome_time2"> </p>
+                            </b>
+                            <div class="placar_time2" id="placar_time2"> </div>
+    
+                        </div>
+    
+                    </div>
+                </div>
+            </div>
+
+            <p style="color: rgb(255, 255, 255); font-size: 25px; font-style: oblique;"> <b>Time B</b></p> 
+            <input class="input2" id="iptNomeB" placeholder="Nome do time" style="margin-bottom: 70px;">
+            <div class="caixas">
+                <input id="iptOposto2" class="input1" placeholder="Oposto" >
+                <input id="iptLibero2" class="input1" placeholder="Libero">
+                <input id="iptPonteDireito2" class="input1" placeholder="Ponteiro Direito">
+                <input id="iptPonteEsquerdo2" class="input1" placeholder="Ponteiro Esquerdo">
+                <input id="iptCentral2" class="input1" placeholder="Central">
+                <input id="iptLevantador2" class="input1" placeholder="Levantador">
+            </div>
+
+            <div class="botoes">  
+                <button onclick="gerar_time_b()" class="botao" style="margin-right: 20px;" id="botaoTimeB">Gerar time</button>
+
+                <div id="divMsg"></div>
+            </div>
+
+            <div class="jogadores">
+
+                <!------------------------------------ Time A ------------------------------------------------>
+                <div class="escalacao">
+                    <p id="p_oposto" style="margin-left: 100px;"> </p>
+                    <p id="p_libero" style="margin-left: 100px;"> </p>
+                    <p id="p_ponteDireito" style="margin-left: 100px;"> </p>
+                </div>
+
+                <div class="escalacao">
+                    <p id="p_ponteEsquerdo"></p>
+                    <p id="p_levantador" style="margin-right: 15px;"> </p>
+                    <p id="p_central"></p>
+                </div>
+
+
+
+                <!------------------------------------ Time B ------------------------------------------------>
+                <div class="escalacao">
+                    <p id="p_ponteDireito2"></p>
+                    <p id="p_levantador2" style="margin-left: 15px;"> </p>
+                    <p id="p_central2"></p>
+                </div>
+
+                <div class="escalacao">
+                    <p id="p_oposto2" style="margin-right: 100px;"> </p>
+                    <p id="p_libero2" style="margin-right: 100px;"></p>
+                    <p id="p_ponteEsquerdo2"style="margin-right: 100px;"> </p>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
+
+<script>
+
+    var placar1 = 0
+    var placar2 = 0
+
+    var pontos1 = 0
+    var pontos2 = 0
+    var pontos3 = 0
+    var pontos4 = 0
+    var pontos5 = 0
+    var pontos6 = 0
+    var pontos7 = 0
+    var pontos8 = 0
+    var pontos9 = 0
+    var pontos10 = 0
+
+    var defesa1 = 0
+    var defesa2 = 0
+
+    var vitoria1 = 0
+    var vitoria2 = 0
+
+    var derrota = 0
+
+    function iniciar_simulador(){
+        jogo.style.display = 'flex';
+        regras.style.display = 'none';
+
+    }
+
+
+    function gerar_time_a() {
+        var oposto = iptOposto.value;
+        var libero = iptLibero.value;
+        var pontaD = iptPonteDireito.value;
+        var pontaE = iptPonteEsquerdo.value;
+        var central = iptCentral.value;
+        var levantador = iptLevantador.value;
+
+
+        if (oposto == "" || libero == "" || pontaD == "" || pontaE == "" || central == "" || levantador == "") {
+            alert(`Todas as posições da quadra deve ser preenchida`)
+        } else {
+            p_oposto.innerHTML += `${oposto} `
+            p_libero.innerHTML += `${libero} `
+            p_ponteDireito.innerHTML += `${pontaD} `
+            p_ponteEsquerdo.innerHTML += `${pontaE} `
+            p_central.innerHTML += `${central} `
+            p_levantador.innerHTML += `${levantador} `
+
+
+            botaoTimeA.style.display = 'none';
+        }
+    }
+
+    function gerar_time_b() {
+        var oposto2 = iptOposto2.value;
+        var libero2 = iptLibero2.value;
+        var pontaD2 = iptPonteDireito2.value;
+        var pontaE2 = iptPonteEsquerdo2.value;
+        var central2 = iptCentral2.value;
+        var levantador2 = iptLevantador2.value;
+
+        var aleatorio = Math.random
+
+        if (oposto2 == "" || libero2 == "" || pontaD2 == "" || pontaE2 == "" || central2 == "" || levantador2 == "") {
+            alert(`Todas as posições da quadra deve ser preenchida`)
+        } else {
+            p_oposto2.innerHTML += `${oposto2} `
+            p_libero2.innerHTML += `${libero2} `
+            p_ponteDireito2.innerHTML += `${pontaD2} `
+            p_ponteEsquerdo2.innerHTML += `${pontaE2} `
+            p_central2.innerHTML += `${central2} `
+            p_levantador2.innerHTML += `${levantador2} `
+
+            botaoTimeB.style.display = 'none';
+        }
+    }
+
+    function iniciar() {
+        var timeA = iptNomeA.value;
+        var timeB = iptNomeB.value;
+
+        var oposto = iptOposto.value;
+        var libero = iptLibero.value;
+        var pontaD = iptPonteDireito.value;
+        var pontaE = iptPonteEsquerdo.value;
+        var central = iptCentral.value;
+        var levantador = iptLevantador.value;
+
+        var oposto2 = iptOposto2.value;
+        var libero2 = iptLibero2.value;
+        var pontaD2 = iptPonteDireito2.value;
+        var pontaE2 = iptPonteEsquerdo2.value;
+        var central2 = iptCentral2.value;
+        var levantador2 = iptLevantador2.value;
+        
+
+
+        if (timeA == "" ||
+            timeB == "" ||
+            oposto2 == "" ||
+            libero2 == "" ||
+            pontaD2 == "" ||
+            pontaE2 == "" ||
+            central2 == "" ||
+            levantador2 == "" ||
+            oposto == "" ||
+            libero == "" ||
+            pontaD == "" ||
+            pontaE == "" ||
+            central == "" ||
+            levantador == "") {
+            alert(`preencha todo o time para dar inicio a simulação`)
+        } else {
+            nome_time1.innerHTML += `${timeA}`
+            nome_time2.innerHTML += `${timeB}`
+
+            placar_time1.innerHTML += `0`
+            placar_time2.innerHTML += `0`
+
+            botaoSimular.style.display = 'block';
+            botaoIniciar.style.display = 'none';
+        }
+    }
+
+    function simular() {
+        var timeA = iptNomeA.value;
+        var timeB = iptNomeB.value;
+
+        var oposto = iptOposto.value;
+        var libero = iptLibero.value;
+        var pontaD = iptPonteDireito.value;
+        var pontaE = iptPonteEsquerdo.value;
+        var central = iptCentral.value;
+        var levantador = iptLevantador.value;
+
+        var oposto2 = iptOposto2.value;
+        var libero2 = iptLibero2.value;
+        var pontaD2 = iptPonteDireito2.value;
+        var pontaE2 = iptPonteEsquerdo2.value;
+        var central2 = iptCentral2.value;
+        var levantador2 = iptLevantador2.value;
+
+        var aleatorio = (Math.random() * 9 + 1).toFixed(0); 
+
+        var aleatorio2 = (Math.random() * 7 + 1).toFixed(0); 
+
+        var par = aleatorio % 2
+
+        if (par == 0) {
+            placar1++
+            placar_time1.innerHTML = `${placar1}`
+            
+        } else {
+            placar2++
+            placar_time2.innerHTML = `${placar2}`
+        }
+
+        if(placar1 == 25 || placar2 == 25){
+
+            if(placar1 == 25){
+                vitoria1++
+                vitoria_time_a.innerHTML = `${timeA} Partidas ganhas: ${vitoria1}`
+            } else if (placar2 == 25){
+                vitoria2++
+                vitoria_time_b.innerHTML = ` ${timeB} Partidas ganhas: ${vitoria2}`
+            }
+
+            placar1 = 0
+            placar2 = 0
+
+            pontos1 = 0
+            pontos2 = 0
+            pontos3 = 0
+            pontos4 = 0
+            pontos5 = 0
+            pontos6 = 0
+            pontos7 = 0
+            pontos8 = 0
+            pontos9 = 0
+            pontos10 = 0
+
+            defesa1 = 0
+            defesa2 = 0 
+
+
+            placar_time1.innerHTML = `${placar1}`
+            placar_time2.innerHTML = `${placar2}`
+
+            p_oposto.innerHTML = `${oposto} | Pontos: <span style="color: rgb(66, 255, 66);"> ${pontos2} </span>`
+            p_libero.innerHTML = `${libero} | Defesas: <span style="color: rgb(66, 255, 66);"> ${defesa1} </span>`
+            p_ponteDireito.innerHTML = `${pontaD} | Pontos: <span style="color: rgb(66, 255, 66);"> ${pontos4} </span>`
+            p_ponteEsquerdo.innerHTML = `${pontaE} | Pontos: <span style="color: rgb(66, 255, 66);"> ${pontos6} </span>`
+            p_central.innerHTML = `${central} | Pontos: <span style="color: rgb(66, 255, 66);"> ${pontos8} </span>`
+            p_levantador.innerHTML = `${levantador} | Pontos: <span style="color: rgb(66, 255, 66);"> ${pontos10} </span>`
+
+
+            p_oposto2.innerHTML = `${oposto2} | Pontos: <span style="color: rgb(66, 255, 66);"> ${pontos1} </span>`
+            p_libero2.innerHTML = `${libero2} | Defesas: <span style="color: rgb(66, 255, 66);"> ${defesa2} </span>`
+            p_ponteDireito2.innerHTML = `${pontaD2} | Pontos: <span style="color: rgb(66, 255, 66);"> ${pontos3} </span>`
+            p_ponteEsquerdo2.innerHTML = `${pontaE2} | Pontos: <span style="color: rgb(66, 255, 66);"> ${pontos5} </span>`
+            p_central2.innerHTML = `${central2} | Pontos: <span style="color: rgb(66, 255, 66);"> ${pontos7} </span>`
+            p_levantador2.innerHTML = `${levantador2} | Pontos: <span style="color: rgb(66, 255, 66);"> ${pontos9} </span>`
+
+            
+        }
+
+        if(aleatorio == 2) {
+            alert(`PONTO DO(A) ${oposto}!! : ${placar1} x ${placar2}`)
+            pontos2++
+            p_oposto.innerHTML = `${oposto} | Pontos: <span style="color: rgb(66, 255, 66);"> ${pontos2} </span>`
+        } else if(aleatorio == 4) {
+            alert(`PONTO DO(A) ${pontaD} !!: ${placar1} x ${placar2}`)
+            pontos4++
+            p_ponteDireito.innerHTML = `${pontaD} | Pontos: <span style="color: rgb(66, 255, 66);"> ${pontos4} </span>`
+        } else  if(aleatorio == 6) {
+            alert(`PONTO DO(A) ${pontaE}!! : ${placar1} x ${placar2}`)
+            pontos6++
+            p_ponteEsquerdo.innerHTML = `${pontaE} | Pontos: <span style="color: rgb(66, 255, 66);"> ${pontos6} </span> `
+        } else if(aleatorio == 8) {
+            alert(`PONTO DO(A) ${central}!! : ${placar1} x ${placar2}`)
+            pontos8++
+            p_central.innerHTML = `${central} | Pontos: <span style="color: rgb(66, 255, 66);"> ${pontos8} </span>`
+        }else if(aleatorio == 10) {
+            alert(`PONTO DO(A) ${levantador}!! : ${placar1} x ${placar2}`)
+            pontos10++
+            p_levantador.innerHTML = `${levantador} | Pontos: <span style="color: rgb(66, 255, 66);"> ${pontos10} </span>`
+        } else if(aleatorio2 == 2) {
+            alert(`Defesa do(A) ${libero}!!`)
+            defesa1++
+            p_goleiro.innerHTML = `${libero} | Defesas: <span style="color: rgb(66, 255, 66);"> ${defesa1} </span>`
+        }
+
+        if(aleatorio == 1) {
+            alert(`PONTO DO(A) ${oposto2}!! : ${placar1} x ${placar2}`)
+            pontos1++
+            p_oposto2.innerHTML = `${oposto2} | Pontos: <span style="color: rgb(66, 255, 66);"> ${pontos1} </span>`
+        } else if(aleatorio == 3) {
+            alert(`PONTO DO(A) ${pontaD2} !!: ${placar1} x ${placar2}`)
+            pontos3++
+            p_ponteDireito2.innerHTML = `${pontaD2} | Pontos: <span style="color: rgb(66, 255, 66);"> ${pontos3} </span>`
+        } else  if(aleatorio == 5) {
+            alert(`PONTO DO(A) ${pontaE2}!! : ${placar1} x ${placar2}`)
+            pontos5++
+            p_ponteEsquerdo2.innerHTML = `${pontaE2} | Pontos: <span style="color: rgb(66, 255, 66);"> ${pontos5} </span> `
+        } else if(aleatorio == 7) {
+            alert(`PONTO DO(A) ${central2}!! : ${placar1} x ${placar2}`)
+            pontos7++
+            p_central2.innerHTML = `${central2} | Pontos: <span style="color: rgb(66, 255, 66);"> ${pontos7} </span>`
+        }else if(aleatorio == 9) {
+            alert(`PONTO DO(A) ${levantador2}!! : ${placar1} x ${placar2}`)
+            pontos9++
+            p_levantador2.innerHTML = `${levantador2} | Pontos: <span style="color: rgb(66, 255, 66);"> ${pontos9} </span>`
+        } else if(aleatorio2 == 2) {
+            alert(`Defesa do(A) ${libero2}!!`)
+            defesa2++
+            p_goleiro2.innerHTML = `${libero2} | Defesas: <span style="color: rgb(66, 255, 66);"> ${defesa2} </span>`
+        }
+
+        vitorias.style.display = 'flex';
+    }
+</script>

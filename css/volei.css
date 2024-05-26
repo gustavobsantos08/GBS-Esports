@@ -13,11 +13,11 @@ body {
     border-color: black white;
     border-style: inset;
 }
+
 .logo {
     width: 100%;
     height: 100%;
 }
-
 
 
 .links {
@@ -137,7 +137,7 @@ body {
     align-items: center;
     text-align: center;
     background-color: rgba(0, 0, 0, 0.096);
-    background-image: url(../assets/bannerFutsal.jpg);
+    background-image: url(../assets/bolaVolei.jpg);
     background-size: cover;
     background-position: 100%;
     margin-top: 50px;
@@ -186,22 +186,21 @@ body {
     border-style: inset;
     border-color: white;
     background-color: aqua;
-    background-image: url(../assets/jogando.jpeg);
-    background-position: 100%;
+    background-image: url("https://p2.trrsf.com/image/fget/cf/1200/1600/middle/images.terra.com/2023/10/19/1577511166-dsc00623.jpg");
     background-size: cover;
     transition: 0.6s;
 
 }
 
 .jogando:hover {
-    width: 93%;
-    height: 53%;
+    width: 90%;
+    height: 50%;
     border-radius: 30px;
     border-style: inset;
     border-color: white;
     background-color: aqua;
-    background-image: url(../assets/10.jpeg);
-    background-position: 100%;
+    background-image: url("https://odia.ig.com.br/_midias/jpg/2023/10/09/1200x750/1_darlan_volei-30776747.jpg");
+    background-position: 20%;
     background-size: cover;
     transition: 0.6s;
 
@@ -214,24 +213,23 @@ body {
     border-style: inset;
     border-color: white;
     background-color: aqua;
-    background-image: url(../assets/fotoTrofeu.jpeg);
-    background-position: 100%;
+    background-image: url("https://i1.wp.com/www.dci.com.br/wp-content/webp-express/webp-images/doc-root/wp-content/uploads/2023/09/volei-masculino-4-6.jpg.webp");
+    background-position: 20%;
     background-size: cover;
     transition: 0.6s;
 }
 
 .jogando1:hover {
-    width: 93%;
-    height: 53%;
+    width: 90%;
+    height: 50%;
     border-radius: 30px;
     border-style: inset;
     border-color: white;
     background-color: aqua;
-    background-image: url(../assets/trofeutime.jpeg);
-    background-position: 100%;
+    background-image: url("https://www.olimpiadatododia.com.br/wp-content/uploads/2021/06/Lucarelli-1.jpg");
+    background-position: 20%;
     background-size: cover;
     transition: 0.6s;
-
 }
 
 .jogando2 {
@@ -260,15 +258,15 @@ body {
     text-align: center;
     border-style: inset;
     border-color: rgb(47, 14, 124);
-    background-image: url("https://i1.wp.com/futsalamador.com/wp-content/uploads/2021/05/pascal-swier-otuM-nw-_NY-unsplash.jpg?fit=1024%2C588&ssl=1");
+    background-image: url("https://img.freepik.com/fotos-premium/uma-quadra-de-volei-de-praia-ensolarada-com-jogadores-cravando-e-mergulhando-na-areia_875722-914.jpg?size=626&ext=jpg&ga=GA1.1.967060102.1716595200&semt=ais_user");
     background-position: 100%;
     background-size: cover;
 }
 
 .gif{
-    width: 40%;
-    height: 65%;
-    background: url(../assets/campo.gif);
+    width: 30%;
+    height: 55%;
+    background: url(../assets/voleibol.gif);
     background-size: cover;
     background-position: 100%;
     border-radius: 30px;

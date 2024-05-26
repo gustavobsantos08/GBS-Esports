@@ -4,8 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>     Futsal </title>
-    <link rel="stylesheet" href="./css/jogo.css">
+    <title>Simulador de partida de Futsal</title>
+    <link rel="stylesheet" href="./css/simulador_futsal.css">
 </head>
 
 <body>
@@ -31,9 +31,9 @@
 
      <div id="jogo" class="jogo">
         <div class="timeA">
-            <p>Time A</p> <input class="input2" id="iptNomeA" placeholder="Nome do time" style="margin-bottom: 70px;">
+            <p style="color: rgb(255, 255, 255); font-size: 25px; font-style: oblique;"><b>Time A</b></p> <input class="input2" id="iptNomeA" placeholder="Nome do time" style="margin-bottom: 70px;">
             <div class="caixas">
-                <input id="iptGoleiro" class="input1" placeholder="Goleiro">
+                <input id="iptGoleiro" class="input1" placeholder="Goleiro" >
                 <input id="iptFixo" class="input1" placeholder="Fixo">
                 <input id="iptEsquerdo" class="input1" placeholder="Ala Esquerdo">
                 <input id="iptDireito" class="input1" placeholder="Ala Direito">
@@ -49,20 +49,20 @@
             <div class="jogadores">
 
                 <div class="escalacao">
-                    <p id="p_goleiro"> </p>
+                    <p id="p_goleiro" style="margin-bottom: 120px; margin-left: 50px;"> </p>
                 </div>
 
                 <div class="escalacao">
-                    <p id="p_fixo"> </p>
+                    <p id="p_fixo" style="margin-bottom: 120px; margin-left: 50px;"> </p>
                 </div>
 
                 <div class="escalacao1">
-                    <p id="p_alaEsquerda"> </p>
-                    <p id="p_alaDireita"></p>
+                    <p id="p_alaEsquerda" style="margin-bottom: 120px; margin-left: 50px;"> </p>
+                    <p id="p_alaDireita" style="margin-bottom: 120px; margin-left: 50px;"></p>
                 </div>
 
                 <div class="escalacao">
-                    <p id="p_pivo"> </p>
+                    <p id="p_pivo" style="margin-bottom: 120px; margin-left: 10px;"> </p>
                 </div>
 
             </div>
@@ -113,7 +113,7 @@
         </div>
 
         <div class="timeA">
-            <p>Time B</p> <input class="input2" id="iptNomeB" placeholder="Nome do time" style="margin-bottom: 70px;">
+            <p style="color: rgb(255, 255, 255); font-size: 25px; font-style: oblique;"> <b>Time B</b></p> <input class="input2" id="iptNomeB" placeholder="Nome do time" style="margin-bottom: 70px;">
             <div class="caixas">
                 <input id="iptGoleiro2" class="input1" placeholder="Goleiro">
                 <input id="iptFixo2" class="input1" placeholder="Fixo">
@@ -129,20 +129,20 @@
             <div class="jogadores">
                 
                 <div class="escalacao">
-                    <p id="p_goleiro2"> </p>
+                    <p id="p_goleiro2" style="margin-bottom: 120px; margin-left: 50px;"> </p>
                 </div>
 
                 <div class="escalacao">
-                    <p id="p_fixo2"> </p>
+                    <p id="p_fixo2" style="margin-bottom: 120px; margin-left: 50px;"> </p>
                 </div>
 
                 <div class="escalacao1">
-                    <p id="p_alaEsquerda2"> </p>
-                    <p id="p_alaDireita2"></p>
+                    <p id="p_alaEsquerda2" style="margin-bottom: 120px; margin-left: 50px;"> </p>
+                    <p id="p_alaDireita2" style="margin-bottom: 120px; margin-left: 50px;"></p>
                 </div>
 
                 <div class="escalacao">
-                    <p id="p_pivo2" ></p>
+                    <p id="p_pivo2" style="margin-bottom: 120px; margin-left: 10px;"></p>
                 </div> 
 
             </div>
@@ -283,7 +283,7 @@
 
         var aleatorio = (Math.random() * 7 + 1).toFixed(0); // jogadores de linha
 
-        var aleatorio2 = (Math.random() * 1 + 1).toFixed(0); // jogadores de linha
+        var aleatorio2 = (Math.random() * 4 + 1).toFixed(0); // jogadores de linha
 
         var par = aleatorio % 2
 
@@ -355,7 +355,7 @@
             gols8++
             p_pivo.innerHTML = `${pivo} | Gols: <span style="color: rgb(66, 255, 66);"> ${gols8} </span> `
         } else  if(aleatorio2 == 2) {
-            alert(`Defesa do(A) ${goleiro}!! Segue o placar : ${placar1} x ${placar2}`)
+            alert(`Defesa do(A) ${goleiro}!!`)
             defesa1++
             p_goleiro.innerHTML = `${goleiro} | Defesas: <span style="color: rgb(66, 255, 66);"> ${defesa1} </span>`
         }
@@ -377,7 +377,7 @@
             gols7++
             p_pivo2.innerHTML = `${pivo2} | Gols : <span style="color: rgb(66, 255, 66);"> ${gols7} </span>`
         } else  if(aleatorio2 == 1) {
-            alert(`Defesa do(A) ${goleiro2}!! Segue o placar : ${placar1} x ${placar2}`)
+            alert(`Defesa do(A) ${goleiro2}!!`)
             defesa2++
             p_goleiro2.innerHTML = `${goleiro2} | Defesas: <span style="color: rgb(66, 255, 66);"> ${defesa2} </span> `
         }
