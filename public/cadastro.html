@@ -11,7 +11,7 @@
   <script src="./js/sessao.js"></script>
 
   <link rel="stylesheet" href="./css/cadastro.css" />
-  <link rel="icon" href="./assets/icon/favicon2.ico" />
+  <link rel="icon" href="./assets/letter-g.png" />
   <link rel="preconnect" href="https://fonts.gstatic.com" />
 </head>
 
@@ -32,19 +32,20 @@
             <input class="caixaTexto" id="senha_input" type="password" placeholder="******" />
             <input class="caixaTexto" id="confirmacao_senha_input" type="password" placeholder="******" />
           </div>
+          <div id="div_aguardar" class="loading-div">
+            <img src="./assets/image.gif" id="loading-gif"/>
+          </div>
+          <div class="alerta_erro">
+            <div class="card_erro" id="cardErro">
+              <span id="mensagem_erro"></span>
+            </div>
+        </div>
           <div class="acesso">
             <button onclick="cadastrar()" class="botao">Cadastrar</button>
             <a href="./login.html">Já sou cadastrado</a>
         </div>
 
-            <div id="div_aguardar" class="loading-div">
-              <img src="./assets/image.gif" id="loading-gif"/>
-            </div>
-            <div class="alerta_erro">
-              <div class="card_erro" id="cardErro">
-                <span id="mensagem_erro"></span>
-              </div>
-          </div>
+            
           
         </div>
         
